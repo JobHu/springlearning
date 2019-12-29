@@ -20,7 +20,7 @@ import org.springframework.validation.annotation.Validated;
 @Component
 //@Validated
 @ConfigurationProperties(prefix = "person")
-@PropertySource(value = {"classpath:person.properties"})
+//@PropertySource(value = {"classpath:person.properties"})//读取外部的配置文件
 public class Person {
       
 	//@Email //@value不支持校验
