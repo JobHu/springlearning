@@ -1,0 +1,7 @@
+#配置文件的加载顺序
+#项目下的config/application.properties
+#项目下的application.properties
+#类路径下的config/application.properties
+#类路径下的application.properties
+#maven项目下的类路径一般指的是src/main/resources src/main/java
+#配制文件下的所有的配置东西都是互补的
