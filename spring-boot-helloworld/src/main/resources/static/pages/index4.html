@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>A</title>
+</head>
+<body>
+<textarea id="message">这是高层的密码！</textarea><br/>
+<button id="test">看看员工在说什么</button><br/><br/><br/>员工们：<br/>
+<iframe src="http://127.0.0.1:8083/spring-boot/pages/index5.html" width="500" height="300" id="iframe"></iframe>
+<script>
+
+  // document.domain = "jiaju.com";
+
+   document.getElementById("test").onclick = function(){
+        alert(document.getElementById("iframe").contentWindow.document.getElementById("message").value);
+    }
+</script>
+</body>
+</html>

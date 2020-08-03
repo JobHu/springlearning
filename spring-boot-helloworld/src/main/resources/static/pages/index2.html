@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- index.html页面调用了jsonp.js文件中的方法名 -->
+ <script type="text/javascript">
+ 
+   function func1 (result){
+	   alert(result.name + result.age);
+	   console.log(result);
+   }
+   /* 原生JS */
+   var url= "http://127.0.0.1:8083/spring-boot/JSONP?func1=func1";
+   var s = document.createElement("script");
+   s.setAttribute("src",url);
+   document.getElementsByTagName("head")[0].appendChild(s);
+   
+ </script>
+ 
+
+ 
+ 
+ <!--   <script type="text/javascript" src="http://127.0.0.1:8083/spring-boot/JSONP?func1=func1"></script> -->
+</body>
+</html>

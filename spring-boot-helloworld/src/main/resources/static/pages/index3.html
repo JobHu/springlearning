@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src ="http://127.0.0.1:8083/spring-boot/js/jquery.js"></script>
+</head>
+<body>
+<!-- jquery中对jsonp跨域进行了完美的封装 -->
+ <script type="text/javascript">
+ 
+ /*   function func1 (result){
+	   alert(result);
+   } */
+   /**
+   JSON数据是一种能很方便通过JavaScript解析的结构化数据。如果获取的数据文件存放在远程服务器上（域名不同，也就是跨域获取数据），
+        则需要使用jsonp类型。使用这种类型的话，会创建一个查询字符串参数 callback=? ，
+        这个参数会加在请求的URL后面。服务器端应当在JSON数据前加上回调函数名，
+       以便完成一个有效的JSONP请求。如果要指定回调函数的参数名来取代默认的callback，可以通过设置$.ajax()的jsonp参数。
+   */
+   $.ajax({ 
+	   type: 'get',
+	   url: 'http://127.0.0.1:8083/spring-boot/JSONP',
+	   dataType: 'jsonp',
+	   jsonp: 'callback', //默认是callback ，会在请求的时候
+	   async: true,
+	   data:{
+		   name : '毛毛',
+		   age : 10
+	   },
+	   //jsonpCallback: 'successCallback'代替jquery生成的默认的回调函数的方法名称
+	   success: function(result){
+		   alert(result);
+		   conosle.log(result);
+	   },
+	   error: function(result){
+		   
+	   }
+   });
+ </script>
+ <!--   <script type="text/javascript" src="http://127.0.0.1:8083/spring-boot/js/jsonp.js"></script> -->
+</body>
+</html>
